@@ -1,0 +1,30 @@
+<p>poll-form works!</p>
+
+<form [formGroup]="pollform" (ngSubmit)="OnSubmit()">
+    <div class="form-group col-sm-12">
+
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="radio" id="q156" value="1" formControlName="r1" /> In a community
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" id="q156" value="1" formControlName="r2" /> in an area of intrest
+            </label>
+        </div>
+
+    </div>
+    <div>
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" #fileInput
+                    (change)="uploadFile($event)" />
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview" [style.backgroundImage]="'url('+ imageUrl +')'">
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-outline-primary">Publish</button>
+    <button type="submit" class="btn btn-outline-primary" (click)="fileInput.click()">Upload Image</button>
+</form>
